@@ -1,0 +1,96 @@
+
+packed.png
+size: 1024,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+blueflower
+  rotate: false
+  xy: 2, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+deadflower
+  rotate: false
+  xy: 324, 196
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+farmer
+  rotate: false
+  xy: 2, 134
+  size: 320, 320
+  orig: 320, 320
+  offset: 0, 0
+  index: -1
+menu
+  rotate: false
+  xy: 324, 262
+  size: 192, 192
+  orig: 192, 192
+  offset: 0, 0
+  index: -1
+orangeflower
+  rotate: false
+  xy: 518, 390
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+redflower
+  rotate: false
+  xy: 2, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+selection
+  rotate: false
+  xy: 68, 68
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+shovel
+  rotate: false
+  xy: 390, 196
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+validselection
+  rotate: false
+  xy: 518, 324
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+wateringcan
+  rotate: false
+  xy: 584, 390
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+whiteflower
+  rotate: false
+  xy: 68, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+
+packed2.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+emotes/water
+  rotate: false
+  xy: 2, 2
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
