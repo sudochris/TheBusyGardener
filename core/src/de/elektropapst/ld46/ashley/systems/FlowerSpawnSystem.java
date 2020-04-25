@@ -17,17 +17,19 @@ import de.elektropapst.ld46.ashley.components.PositionComponent;
 import de.elektropapst.ld46.ashley.components.TextureRegionComponent;
 import de.elektropapst.ld46.assets.enums.Textures;
 
-import static de.elektropapst.ld46.Statics.ashley;
-import static de.elektropapst.ld46.Statics.assets;
+import static de.elektropapst.ld46.Statics.*;
 
 public class FlowerSpawnSystem extends GameSystem{
 
     private static final int BUILDABLE_ID = 99;
 
     private final TiledMapTileLayer occupationLayer;
-    private float updateCounter = 0.0f;
     private FarmGraph farmGraph;
     private ImmutableArray<Entity> players;
+
+    private float flowerSpawnIntervalCounter = 0.0f;
+    private float flowerSpawnIntervalIncCounter = 0.0f;
+    private float currentFlowerSpawnInterval = Statics.settings.INITIAL_FLOWER_SPAWN_INTERVAL;
 
     public FlowerSpawnSystem(int priority, TiledMapTileLayer occupationLayer, FarmGraph farmGraph) {
         super(priority);
@@ -44,9 +46,18 @@ public class FlowerSpawnSystem extends GameSystem{
     @Override
     public void update(float deltaTime) {
         super.update(deltaTime);
-        updateCounter += deltaTime;
-        if(updateCounter >= Statics.settings.FLOWER_SPAWN_INTERVAL) {
-            updateCounter -= Statics.settings.FLOWER_SPAWN_INTERVAL;
+        flowerSpawnIntervalCounter += deltaTime;
+        flowerSpawnIntervalIncCounter += deltaTime;
+
+        if(flowerSpawnIntervalIncCounter >= Statics.settings.FLOWER_SPAWN_INTERVAL_INC_INTERVAL) {
+            flowerSpawnIntervalIncCounter -= Statics.settings.FLOWER_SPAWN_INTERVAL_INC_INTERVAL;
+            currentFlowerSpawnInterval = MathUtils.clamp(
+                    currentFlowerSpawnInterval + settings.FLOWER_SPAWN_INTERVAL_INC_STEP,
+                    settings.INITIAL_FLOWER_SPAWN_INTERVAL, settings.FINAL_FLOWER_SPAWN_INTERVAL);
+        }
+
+        if(flowerSpawnIntervalCounter >= currentFlowerSpawnInterval) {
+            flowerSpawnIntervalCounter -= currentFlowerSpawnInterval;
 
 
             boolean spawnPossible = true;

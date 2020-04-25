@@ -6,6 +6,8 @@
 	<inherits name='com.badlogic.ashley_gwt' />
 <!--	<inherits name="space.earlygrey.shapedrawer"/>-->
 
+	<extend-configuration-property name="gdx.reflect.include" value="de.elektropapst.ld46.ashley.components" />
+
 	<inherits name='LDGame' />
 	<entry-point class='de.elektropapst.ld46.client.HtmlLauncher' />
 	<set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>

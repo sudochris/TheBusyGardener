@@ -12,7 +12,7 @@ public class FarmNode {
     public FarmNode(int x, int y) {
         this.x = x;
         this.y = y;
-        connections = new Array<>(8);
+        connections = new Array<Connection<FarmNode>>(8);
     }
 
     public int getIndex() {

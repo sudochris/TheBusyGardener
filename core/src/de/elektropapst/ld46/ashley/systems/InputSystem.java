@@ -128,7 +128,11 @@ public class InputSystem extends GameSystem {
             for(PlayerAction moveAction : moveActions) {
                 plc.addAction(moveAction);
             }
-            plc.replaceLastAction(PlayerAction.createWateringAction(clickedPosition, moveActions.last().playerPosLocation));
+            if(!moveActions.isEmpty()) {
+                plc.replaceLastAction(PlayerAction.createWateringAction(clickedPosition, moveActions.last().playerPosLocation));
+            } else {
+                plc.replaceLastAction(PlayerAction.createNoOpAction());
+            }
             return true;
         }
         return false;
@@ -170,12 +174,8 @@ public class InputSystem extends GameSystem {
                     } else {
                         plc.replaceLastAction(PlayerAction.createNoOpAction());
                     }
-                } else {
-                    System.out.println("NO FLOWER IN SLOT!");
                 }
             }
-        } else {
-            System.out.println("there is already a flower");
         }
         return false;
     }

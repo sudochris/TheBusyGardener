@@ -96,7 +96,6 @@ public class PlayerActionSystem extends GameSystem {
             if(action.type == PlayerAction.Type.PLANT) {
                 if (playerEntities.size() > 0) {
                     PositionComponent playerPosition = ComponentMappers.position.get(playerEntities.first());
-                    System.out.println(playerPosition.worldPosition + " vs " + action.actionLocation);
                     if(playerPosition.worldPosition.x != action.actionLocation.x || playerPosition.worldPosition.y != action.actionLocation.y) {
                         createFlowerAt(action.actionLocation, pic.pull(action.slot));
                         farmGraph.removeAllConnectionsFromNode((int) action.actionLocation.x, (int) action.actionLocation.y);

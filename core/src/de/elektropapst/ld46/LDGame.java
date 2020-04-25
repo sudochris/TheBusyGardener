@@ -39,8 +39,8 @@ public class LDGame extends Game {
     public void setCurrentScreen(Screens screen) {
         if (screen != Screens.LOADING) {
             initScreens();
+            screens.get(screen).reset();
         }
-        screens.get(screen).reset();
         this.setScreen(screens.get(screen));
     }
 
