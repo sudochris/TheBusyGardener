@@ -7,7 +7,7 @@
 
 > A LibGdx Game.
 
-####Credits
+#### Credits
 
 * BackgroundMusic:
 https://freepd.com/world.php (Written by Kevin MacLeod. Simple, relaxing and slightly nostalgic piece made with beautiful celtic harp. This music is available for commercial and non-commercial purposes.)
