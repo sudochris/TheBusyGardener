@@ -45,9 +45,6 @@ public class Assets implements Disposable {
 
     private void loadTextures() {
         manager.load("sprites/packed.atlas", TextureAtlas.class);
-//        for(Textures texture : Textures.values()) {
-//            manager.load(texture.fileName, Texture.class);
-//        }
     }
 
     private void loadFonts() {}

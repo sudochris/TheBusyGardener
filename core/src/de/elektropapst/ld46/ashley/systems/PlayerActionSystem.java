@@ -53,7 +53,6 @@ public class PlayerActionSystem extends GameSystem {
         deltasum += deltaTime;
         if(deltasum >= settings.PLAYER_MOVE_STEP) {
             deltasum -= settings.PLAYER_MOVE_STEP;
-            // DO MOVE
             PlayerAction action = plc.getNextAction();
             if(action.type == PlayerAction.Type.MOVE) {
                 if(!walkingSoundPlaying) {

@@ -259,10 +259,8 @@ public class InputSystem extends GameSystem {
 
         batch.begin();
         if (menuOpen) {
-            // handle menu
             batch.setColor(1, 1, 1, 0.8f);
             batch.draw(menuTexture, menuTilePosition.x * settings.TILE_SIZE, menuTilePosition.y * settings.TILE_SIZE);
-            // MENU CONTENT
             if(playerEntities.size() > 0) {
                 Entity player = playerEntities.first();
                 PlayerInventoryComponent pic = ComponentMappers.inventory.get(player);

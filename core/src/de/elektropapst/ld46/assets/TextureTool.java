@@ -1,3 +1,4 @@
+// This file is here for a reason. The texture tool should be refactored!
 //package de.elektropapst.ld46.assets;
 //
 //import com.badlogic.gdx.files.FileHandle;

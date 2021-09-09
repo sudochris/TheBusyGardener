@@ -54,8 +54,6 @@ public class GameScreen extends GdxScreen {
         Statics.ashley.addSystem(new UISystem(9));
         Statics.ashley.addSystem(new InputSystem(10, map, camera, farmGraph));
 
-//        Statics.ashley.addSystem(new DebugUISystem(11, camera));
-
         Entity player = Statics.ashley.createEntity();
 
         PositionComponent pc = Statics.ashley.createComponent(PositionComponent.class);
@@ -89,10 +87,6 @@ public class GameScreen extends GdxScreen {
     public void render(float delta) {
         super.render(delta);
         Statics.ashley.update(delta);
-
-//        if(Gdx.input.isKeyJustPressed(Input.Keys.F5)) {
-//            reset();
-//        }
         if (dirtyEntities.size() > 0) {
             for (Entity entity : dirtyEntities) {
                 Statics.ashley.removeEntity(entity);
@@ -113,7 +107,6 @@ public class GameScreen extends GdxScreen {
 
     @Override
     public void reset() {
-//        Gdx.app.log(TAG, "Reload System");
         dispose();
         create();
     }

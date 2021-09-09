@@ -77,7 +77,6 @@ public class LostScreen extends GdxScreen {
 
     @Override
     public void reset() {
-//        Gdx.app.log(TAG, "Reload System");
         dispose();
         create();
     }

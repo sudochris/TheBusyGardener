@@ -68,11 +68,9 @@ public class EntityRenderSystem extends GameSystem {
                 batch.setColor(oldColor);
 
             } else if(ComponentMappers.player.has(e)) {
-//                 Its the player
                 PlayerComponent plc = ComponentMappers.player.get(e);
                 batch.draw(plc.getAnimation().getKeyFrame(deltaSum, true), pc.worldPosition.x * settings.TILE_SIZE, pc.worldPosition.y * settings.TILE_SIZE);
             } else {
-                // everything else
                 tr = ComponentMappers.textureRegion.get(e);
                 batch.draw(tr.textureRegion, pc.worldPosition.x * settings.TILE_SIZE, pc.worldPosition.y * settings.TILE_SIZE);
             }
